@@ -3,9 +3,8 @@
     "configurations": [
         {
             "name": "Launch index.html (disable sourcemaps)",
-            "type": "chrome",
+            "type": "firefox",
             "request": "launch",
-            "sourceMaps": false,
             "file": "${workspaceRoot}/index.html"
         },
     ]

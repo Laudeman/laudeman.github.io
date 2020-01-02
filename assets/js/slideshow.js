@@ -1,19 +1,24 @@
 var slideIndex = 1;
-showSlides(slideIndex);
+for (let index = 0; index < document.getElementsByClassName("slideshow-container").length; index++) {
+  showSlides(slideIndex, index);
+}
+//showSlides(slideIndex, 0);
 
 // Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+function plusSlides(n, containerIndex) {
+  showSlides(slideIndex += n, containerIndex);
 }
 
 // Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+function currentSlide(n, containerIndex) {
+  showSlides(slideIndex = n, containerIndex);
 }
 
-function showSlides(n) {
+function showSlides(n, containerIndex) {
   var i;
-  var slides = document.getElementsByClassName("mySlides");
+  var slideContainers = document.getElementsByClassName("slideshow-container");
+  var currentContainer = slideContainers[containerIndex]
+  var slides = currentContainer.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("dot");
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
