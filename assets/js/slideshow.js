@@ -17,9 +17,11 @@ function currentSlide(n, containerIndex) {
 function showSlides(n, containerIndex) {
   var i;
   var slideContainers = document.getElementsByClassName("slideshow-container");
-  var currentContainer = slideContainers[containerIndex]
-  var slides = currentContainer.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
+  var currentSlideContainer = slideContainers[containerIndex];
+  var slides = currentSlideContainer.getElementsByClassName("mySlides");
+  var dotContainers = document.getElementsByClassName("dot-container");
+  var currentDotContainer = dotContainers[containerIndex]; 
+  var dots = currentDotContainer.getElementsByClassName("dot");
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
